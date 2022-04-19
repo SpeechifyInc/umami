@@ -1,8 +1,9 @@
 import React from 'react';
-import Head from 'next/head';
-import Header from 'components/layout/Header';
+
 import Footer from 'components/layout/Footer';
+import Header from 'components/layout/Header';
 import useLocale from 'hooks/useLocale';
+import Head from 'next/head';
 
 export default function Layout({ title, children, header = true, footer = true }) {
   const { dir } = useLocale();
@@ -10,7 +11,7 @@ export default function Layout({ title, children, header = true, footer = true }
   return (
     <>
       <Head>
-        <title>umami{title && ` - ${title}`}</title>
+        <title>{title && ` - ${title}`}</title>
       </Head>
 
       {header && <Header />}
