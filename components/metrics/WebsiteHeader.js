@@ -27,7 +27,6 @@ export default function WebsiteHeader({ websiteId, title, domain, showLink = fal
     </>
   ) : (
     <>
-      <Favicon domain={domain} />
       <a href={`https://soundbite.speechify.com/bite/${title}`} target="_blank" rel="noreferrer">
         {title}
       </a>
