@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import Footer from 'components/layout/Footer';
 import Header from 'components/layout/Header';
@@ -9,7 +9,7 @@ export default function Layout({ title, children, header = true, footer = true }
   const { dir } = useLocale();
 
   return (
-    <>
+    <Fragment>
       <Head>
         <title>{title && ` - ${title}`}</title>
       </Head>
@@ -18,6 +18,6 @@ export default function Layout({ title, children, header = true, footer = true }
       <main>{children}</main>
       {footer && <Footer />}
       <div id="__modals" dir={dir} />
-    </>
+    </Fragment>
   );
 }
