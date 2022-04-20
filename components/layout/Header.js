@@ -44,7 +44,7 @@ export default function Header() {
         <div className={styles.title}>
           <Logo />
         </div>
-        <HamburgerButton />
+        {user && <HamburgerButton />}
         {user && (
           <div className={styles.links}>
             <Link href="/dashboard">
