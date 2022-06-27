@@ -6,7 +6,7 @@ function customScriptName(req) {
   if (scriptName) {
     const url = req.nextUrl.clone();
     const { pathname } = url;
-    const names = scriptName.split(',').map(name => (name + '.js').trim());
+    const names = scriptName.split(',').map(name => name.trim() + '.js');
 
     if (names.find(name => pathname.endsWith(name))) {
       url.pathname = '/umami.js';
@@ -17,7 +17,7 @@ function customScriptName(req) {
 
 function disableLogin(req) {
   if (process.env.DISABLE_LOGIN && req.nextUrl.pathname.endsWith('/login')) {
-    return new Response('403 Forbidden', { status: 403 });
+    return new Response('Login is disabled', { status: 403 });
   }
 }
 
