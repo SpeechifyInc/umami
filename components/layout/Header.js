@@ -39,7 +39,7 @@ export default function Header() {
 
   return (
     <>
-      {user?.is_admin && <UpdateNotice />}
+      {user?.is_admin && !process.env.updatesDisabled && <UpdateNotice />}
       <header className={classNames(styles.header, 'row')}>
         <div className={styles.title}>
           <Logo />
